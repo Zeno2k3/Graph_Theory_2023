@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="../image/hcmue.png" type="image/svg" />
+    <link rel="stylesheet" href="../css/dijkstraAndPrim.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/instruction.css" />
+    <title>Instructions | Dijkstra Solver</title>
+</head>
+<body>
+    <header>
+        <div class="title">
+            <a href="#">Dijkstra And Prim Solver</a>
+        </div>
+    </header>
+    <div class="block inline" style="margin-left: -100px">A</div>
+    <div class="block inline" style="margin-left: 200px">B</div>
+    <main>
+        <h3>Instructions</h3>
+        <ul>
+            <li>+ Click anywhere on the screen to create a node.</li>
+            <li>+ After you finished adding nodes, start adding edges.</li>
+            <li>+ Click button "Add edges" before adding edges.</li>
+            <li>+ Edges can be added by clicking one node and then other node.</li>
+            <li>+ All edges have default weight scaled to the size between them.</li>
+            <li>+ You can click on the existing weight and change it according to the need.</li>
+            <li>+ Enter the source vertex in the input box and click "Run" or click "Run" for Prim.</li>
+            <li>+ Before clicking run, make sure all weights are as you need them to be.</li>
+            <li>+ Right click on the node or edge to delete.</li>
+        </ul>
+    </main>
+    <a href="#" class="continue-link" onclick="goBack()">
+        Continue >
+    </a>
+    <script>
+        function goBack() {
+            var previousPage = sessionStorage.getItem('currentPage');
+
+            if (previousPage) {
+                window.location.href = previousPage;
+            } else {
+                alert('Không có trang trước đó');
+            }
+        }
+    </script>
+</body>
+</html>

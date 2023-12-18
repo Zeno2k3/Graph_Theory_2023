@@ -1,0 +1,204 @@
+﻿* {
+   box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.drawing-area {
+    display: flex; 
+    position: absolute; 
+    top: 0; 
+    flex-wrap: wrap; 
+    justify-content: flex-start;
+    align-items: flex-start; 
+    background-color: #333; 
+    width: 100%; 
+    height: 100vh; 
+    z-index: -1; 
+}
+
+    .drawing-area .click-instruction {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        pointer-events: none;
+        z-index: -10;
+    }
+
+.block {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgb(163, 211, 208);
+    border-radius: 50%;
+    margin-top: -3px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; 
+    cursor: pointer; 
+    z-index: 10;
+}
+
+.outline-btn {
+    border: 2px solid rgb(102, 216, 159);
+    background-color: transparent; 
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none; 
+    color: #fff;
+    padding: 6px 10px; 
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+    .outline-btn:disabled {
+        border: 2px solid #ea0000;
+        cursor: not-allowed;
+    }
+
+    #fix-length {
+        border: 2px solid rgb(255, 255, 255);
+        background-color: transparent; 
+        border-radius: 4px; 
+        cursor: pointer;
+        outline: none;
+        color: #fff;
+        padding: 6px 10px; 
+        margin-left: 15px;
+    }
+
+    #fix-length.default {
+        border: 2px solid rgb(255, 255, 255);
+    }
+
+    #fix-length.selected {
+        border: 2px solid rgb(240, 240, 8);
+    }
+
+    #fix-length.disabled {
+        border: 2px solid #ea0000;
+        cursor: not-allowed;
+      }
+.reset-btn {
+    margin-left: 15px;
+}
+
+.line {
+    height: 5px; 
+    background-color: lemonchiffon; 
+    position: absolute;
+    transform-origin: top left; 
+    text-align: center;
+    color: #eee;
+    line-height: 2rem; 
+}
+
+    .line .edge-weight {
+        padding: 0 10px;
+        width: max-content; 
+        margin: auto; 
+    }
+
+header {
+    width: 100%;
+    padding: 20px;
+    background-color: #0e2a86;
+    text-align: center;
+}
+
+    header .title {
+        font-size: 2rem; 
+        color: #fff;
+    }
+
+        header .title a:nth-child(2) {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            right: 10px;
+        }
+
+        header .title a {
+            text-decoration: none; 
+            color: #fff;
+            cursor: not-allowed;
+        }
+
+a > img {
+    width: 100%;
+    height: 100%;
+}
+
+main h3 {
+    padding: 20px;
+    font-weight: 1.2rem;
+}
+
+main ul > li {
+    padding: 0.5rem; 
+}
+
+.options {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+    .options input {
+        outline: 0;
+        padding: 6px;
+        width: 100px;
+    }
+
+.path {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: min-content; 
+    color: #fff;
+    overflow-x: scroll; 
+    width: 40%;
+    min-width: 300px; 
+    background-color: rgba(146, 146, 146, 0.4);
+    transition-duration: 1s;
+}
+
+    .path::-webkit-scrollbar {
+        display: none; 
+    }
+
+@media screen and (max-width: 735px) {
+    header .options {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    header .options > div {
+      margin-top: 10px;
+      text-align: center;
+    }
+  
+    .outline-btn,
+    #fix-length {
+      margin: 10px 10px 5px 0;
+    }
+  
+    .drawing-area .click-instruction {
+      font-size: 14px;
+    }
+  
+    .block {
+      width: 40px;
+      height: 40px;
+    }
+
+    #source-node {
+        margin-right: 10px;
+    }
+}
+  

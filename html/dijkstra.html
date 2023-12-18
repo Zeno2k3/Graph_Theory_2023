@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="../image/dijkstra.png" type="image/svg" />
+    <link rel="stylesheet" href="../css/dijkstraAndPrim.css" />
+    <title>Dijkstra Solver</title>
+</head>
+<body>
+    <header>
+        <div class="title">
+            <a href="#">Dijkstra Solver</a>
+        </div>
+        <div class="options">
+            <div>
+                <button class="outline-btn" onclick="goHome()">
+                    Home
+                </button>
+                <button class="outline-btn" id="add-edge-enable" onclick="addEdges()" disabled>
+                    Add edges
+                </button>
+                <button class="outline-btn reset-btn" onclick="resetDrawingArea()" disabled>
+                    Clear
+                </button>
+                <button  id="fix-length" onclick="fixLength()" disabled>
+                    Change length
+                </button>
+            </div>
+            <div>
+                <input type="text" inputmode="numeric" id="source-node" placeholder="Source Node" />
+                <button class="outline-btn run-btn" onclick="findShortestPath(this)" disabled>
+                    Run
+                </button>
+                <button class="outline-btn"
+                        onclick="goInstruction()">
+                    Instruction
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <div class="drawing-area">
+        <p class="click-instruction">Click to create node</p>
+    </div>
+    <div class="path"></div>
+    <script src="../js/animatedPageTransition.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"></script>
+    <script src="../js/dijkstra.js"></script>
+    <script src="../js/graphEditor.js"></script>
+</body>
+</html>
